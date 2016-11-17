@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form method="post" action="/sua" enctype="multipart/form-data">
+		<input type="hidden" name="i" value="<%=i%>"><br><br>
+		<input type="text" name="id" value="<%=arr.id%>"><br><br>
+		<input type="text" name="desc" value="<%=arr.desc%>"><br><br>
+		<input type="text" name="titles" placeholder="Titles" value="<%=arr.titles%>"><br><br>
+		<img src="<%='/images/background/' + arr.images%>"><br><br>
+		<input type="file" name="avatar"><br><br>
+		<input type="submit" value="Sua">
+	</form>
+</body>
+</html>

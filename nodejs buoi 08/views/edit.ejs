@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form method="post" action="/edit">
+		<input type="hidden" name="index" value="<%= index%>">
+		<input type="text" name="name" placeholder="Name" value="<%=bird.name%>"><br><br>
+		<input type="text" name="cost" placeholder="Cost" value="<%=bird.cost%>"><br><br>
+		<input type="text" name="bodies" placeholder="Images" value="<%=bird.bodies%>"><br><br>
+		<input type="submit" value="Edit">
+	</form>
+</body>
+</html> 

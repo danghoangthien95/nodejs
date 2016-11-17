@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<ul>
+	<%
+		arr.forEach(function (Video) {
+			%>
+		<li>
+			<img class="thumb" src="images/background/<%=Video.images%>" alt="" />
+			<iframe src="http://player.vimeo.com/video/<%=Video.id%>?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+			<h3><%=Video.titles%></h3>
+			<p><%=Video.desc%></p>
+		</li>
+			<%
+		});
+	%>
+</ul>
+</body>
+</html> 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="post" action="/dangky">
+		<input type="text" name="name" placeholder="Name"><br><br>
+		<input type="text" name="age" placeholder="Age"><br><br>
+		<input type="submit" value="Send">
+	</form>
+
+	<%#= Person[0].name + ' ' + Person[0].age %><br>
+	<%#= Person[1].name + ' ' + Person[1].age %><br>
+	<%#= Person[2].name + ' ' + Person[2].age %><br>
+
+	<%# Person.forEach(function (person) {
+		// body...
+		%> <%#= person.name + ' ' + person.age %> <%#
+	}) %>
+
+	<%# for (var i = 0; i < Person.length; i++) {
+	 	%> <%#= Person[i].name + ' ' + Person[i].age %> <%#
+	} %>
+
+	<%#-age < 18 ?  "<h1>Ban chua du tuoi</h1>" : "<h1>Ban da du tuoi</h1>"%>
+	
+	<%= f(1)%>
+
+<body>
+</html>

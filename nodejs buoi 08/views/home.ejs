@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nodejs KhoaPham</title>
+</head>
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<body>
+
+	<% 
+
+		arr.forEach(function (bird, index) { 
+			// body...
+			%>
+
+			<div class="product">
+				<img src="images/<%=bird.bodies%>">
+				<h2><%=bird.name%></h2>
+				<p><%=bird.cost%></p>
+
+				<div>
+					<h2><%=bird.cost%> VND</h2>
+				</div>
+				<a href="/change/<%=index%>"><button>Change</button></a>
+
+			</div>
+			<%
+		});
+
+	%>
+
+	<a href="/add"><button>Add</button></a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SINH VIEN - LIST</title>
+</head>
+<body>
+	<table width="500" border="collapse">
+		<tr>
+			<td>ID</td>
+			<td>HoTen</td>
+			<td>Email</td>
+			<td><a href="../sinhvien/them">Them</a></td>
+		</tr>
+
+		<%
+
+		danhsach.rows.forEach(function(sv) {
+
+		%>
+
+			<tr>
+				<td><%= sv.id %></td>
+				<td><%= sv.hoten %></td>
+				<td><%= sv.email %></td>
+				<td>
+					<a href="../sinhvien/sua/<%= sv.id %>">Sua</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a onClick="return confirm('Are you sure?')" href="../sinhvien/xoa/<%= sv.id %>">Xoa</a>
+				</td>
+			</tr>
+
+		<%
+
+		}); 
+
+		%>
+
+	</table>
+</body>
+</html>

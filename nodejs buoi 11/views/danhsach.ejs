@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		table, td{
+			border: solid 1px;
+			width: 700px;
+		}
+	</style>
+</head>
+<body>
+<ul>
+	<%
+		arr.forEach(function (Video) {
+			%>
+		<li>
+			<img class="thumb" src="images/background/<%=Video.images%>" alt="" />
+			<iframe src="http://player.vimeo.com/video/<%=Video.id%>?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+			<h3><%=Video.titles%></h3>
+			<p><%=Video.desc%></p>
+		</li>
+			<%
+		});
+	%>
+
+	<%
+	arr.forEach(function (Video, i) {
+		%>
+	
+		<table>
+			
+			<tr>
+				<td>
+					STT <%=i + 1%>
+				</td>
+				<td>
+					<h3><%=Video.titles%></h3>
+				</td>
+				<td>
+					<img class="thumb" src="images/background/<%=Video.images%>" alt="" width="150px"/>
+				</td>
+				<td>
+					<a href="/xoa/<%=i%>">Xoa</a>
+					<a href="/sua/<%=i%>">Sua</a>
+				</td>
+			</tr>
+
+		</table>
+			<%
+		});
+	%>
+</ul>
+</body>
+</html> 
