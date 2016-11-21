@@ -25,6 +25,7 @@ function insertUser(username, password, address, images, funcSuccess, funcFailed
 	// body...
 	var sql = `INSERT INTO "USER"(username, password, address, images) 
 				VALUES('${username}', '${password}', '${address}', '${images}')`;
+	console.log(sql);
 	queryDB(sql, function (err, result) {
 		// body...
 		if(err) {
@@ -41,7 +42,6 @@ function insertUser(username, password, address, images, funcSuccess, funcFailed
 function checkSignIn(username, password, onSuccess, onFailed) {
 	// body...
 	var sql = `SELECT * FROM "USER" WHERE username = '${username}' AND password = '${password}'`;
-	console.log(sql)
 	queryDB(sql, function (err, result) {
 		// body...
 		if(err) {
@@ -49,7 +49,6 @@ function checkSignIn(username, password, onSuccess, onFailed) {
 		} else {
 			console.log(result.rowCount)
 			if (result.rowCount == 1) {
-				
 				onSuccess();
 			} else {
 				onFailed();
@@ -58,11 +57,6 @@ function checkSignIn(username, password, onSuccess, onFailed) {
 	})
 }
 
-checkSignIn('khoa', '12345', function(){
-	console.log("dang nhap thanh cong")
-}, function(){
-	console.log("dang nhap khong thanh cong")
-})
 
 module.exports.insertUser = insertUser; // neu co dau thuc thi co nghia la bang voi kq tra ve cua func
 module.exports.checkSignIn = checkSignIn;
