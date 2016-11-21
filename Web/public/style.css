@@ -1,0 +1,35 @@
+body {
+	background-color: #3c2566;
+}
+#nhaphuong {
+	width: 500px;
+	margin: auto;
+}
+.block {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+#hinhNP {
+	width: 500px;
+}
+a {
+	color: #fddf4d;
+	text-decoration: none;
+	padding: 10px;
+}
+#truoc {
+	float: left;
+}
+#sau {
+	float: right;
+}
+#like, #dislike {
+	width: 50px;
+}
+#like {
+	float: left;
+}
+#dislike {
+	float: right;
+}
