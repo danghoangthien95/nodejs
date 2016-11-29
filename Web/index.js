@@ -23,10 +23,11 @@ app.get('/nhaphuong/:id',function (req, res) {
 	// body...
 	var id = req.params.id;
 	insertHinh(id, function(err, result){
-		if (err) {
-			console.log(err)
+		console.log(result)
+		if (result.rows[0] == undefined) {
+			res.redirect('/nhaphuong/1')
 		} else {
-			res.render('main', {dangxem: id, hinh: result.rows[0].hinh})
+			res.render('main', {dangxem: id, hinh: result.rows[0].hinh}) // chi tra ve duy nhat 1 dong nen l rows[0]
 		}
 	}, 
 	function(err, result){
@@ -37,20 +38,24 @@ app.get('/nhaphuong/:id',function (req, res) {
 
 app.get('/like/:id', function(req, res){
 	var id = req.params.id;
-	like(id, function() {
+	like(id, function(result) {
 		// body...
-		res.send('Update like thanh cong')
-	}, function(){
-		res.send('Update like that bai')
+		if(result == 1)
+			res.send('Update like thanh cong')
+		else{
+			res.send('Update like that bai')
+		}
 	})
 })
 
 app.get('/dislike/:id', function(req, res){
 	var id = req.params.id;
-	dislike(id, function() {
+	dislike(id, function(result) {
 		// body...
-		res.send('Update dislike thanh cong')
-	}, function(){
-		res.send('Update dislike that bai')
+		if(result == 1)
+			res.send('Update dislike thanh cong')
+		else{
+			res.send('Update dislike that bai')
+		}
 	})
 })

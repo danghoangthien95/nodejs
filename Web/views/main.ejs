@@ -1,5 +1,12 @@
-
-<!DOCTYPE html>
+<%
+	if (dangxem <= 1) {
+		truoc = 1;
+	} else {
+		truoc = dangxem - 1;
+	}
+	var sau = parseInt(dangxem) + 1;
+%>
+<!DOCTYPE html> 
 <html>
 <head>
 	<title>Dien Vien Nha Phuong</title>
@@ -8,15 +15,15 @@
 </head>
 <body>
 <div id="nhaphuong">
-	<a href="./images/<%= truoc %>" id="truoc">Truoc</a>
-	<a href="./images/<%= dangxem + 1%>" id="sau">Sau</a>
+	<a href="./nhaphuong/<%= truoc %>" id="truoc">Truoc</a>
+	<a href="./nhaphuong/<%= sau %>" id="sau">Sau</a>
 
 	<div id="block"></div>
-	<img src="images/<%= hinh %>" id="hinhNP" />
+	<img src="images/<%= hinh %>" id="hinhNP"/>
 
 	<div id="block"></div>
-	<img id="like" src="images/like.png" />
-	<img id="dislike" src="images/dislike.png" />
+	<a href="/nhaphuong/" id="like"><%= hinh.like%><img id="like" src="images/like.png" /></a>
+	<a href="" id="dislike"><%= hinh.dislike%><img id="dislike" src="images/dislike.png" /></a>
 
 </div>
 </body>

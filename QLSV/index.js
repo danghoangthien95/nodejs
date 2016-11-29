@@ -45,7 +45,6 @@ function queryDB(sql, cb) {
 	  	})
 	  }
 	});
-
 }
 
 app.get('/sinhvien/list', function (req, res) {

@@ -7,7 +7,7 @@ var config = {
 	host: 'localhost',
 	port: 5432,
 	max: 10,
-	idleTimeoutMillis:30000
+	idleTimeoutMillis:1000
 }
 
 var pool = new pg.Pool(config);
@@ -15,12 +15,13 @@ var pool = new pg.Pool(config);
 function queryDB(sql, cb){
   pool.connect(function(err, client, done){
     if(err){
-      console.log('LOI KET NOI ' + err);
-    }else{
-      client.query(sql, cb);
+      	console.log('LOI KET NOI ' + err);
+    } else{
+    	done();
+    	client.query(sql, cb);
     }
   });
-}
+} 
 function insertHinh(id, funcSuccess, funcFailed) {
 	// body...
 	var sql = `SELECT * FROM "NHAPHUONG" WHERE id = '${id}'`;
@@ -37,36 +38,31 @@ function insertHinh(id, funcSuccess, funcFailed) {
 	})
 }
 
-function like(id, funcSuccess, funcFailed) {
+function like(id, cb) {
 	
-	// var sql = `UPDATE "NHAPHUONG" SET like = '${like}' + 1 WHERE id = '${id}'`;
-
+	// var sql = `UPDATE "NHAPHUONG" SET "like" = "like" + 1 WHERE id = ${id}`;
 
 	var sql = 'UPDATE "NHAPHUONG" SET "like" = "like" + 1 WHERE "id" = ' + id;
 	console.log(sql)
 	queryDB(sql, function (err, result) {
 		// body...
-		if(err) {
-			console.log(err)
-			funcFailed()
+		if(result.rowCount == 1) {
+			cb(1)
 		} else {
-			console.log(result)
-			funcSuccess()
+			cb(2)
 		}
 	})
 }
 
-function dislike(id, funcSuccess, funcFailed) {
+function dislike(id, cb) {
 	var sql = 'UPDATE "NHAPHUONG" SET "dislike" = "dislike" + 1 WHERE "id" = ' + id;
 	console.log(sql)
 	queryDB(sql, function (err, result) {
 		// body...
-		if(err) {
-			console.log(err)
-			funcFailed()
+		if(result.rowCount == 1) {
+			cb(1)
 		} else {
-			console.log(result)
-			funcSuccess()
+			cb(2)
 		}
 	})
 }

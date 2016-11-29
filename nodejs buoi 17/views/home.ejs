@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trang chu</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io.connect('http://localhost:3000')
+		socket.on('server_gui_tin_nhan', function (data) {// nhan tin tu server
+			// body...
+			console.log(data)
+			document.getElementById('list-tin-nhan').innerHTML += `<li>$(data)</li>` 
+		})
+		function gui(argument) {
+			// body...
+			var data  = document.getElementById('txt').value;
+
+			socket.emit('client_gui_tin_nhan', data);//1: mac dung de biet no lam gi 2: mot doi tuong hoac mot gia tri
+			document.getElementById('txt').value = ''
+		}
+	</script>
+</head>
+<body>
+	<h1>hello world</h1><br><br>
+	<input type="text" id="txt"><br><br>
+	<button type="button" onclick="gui()">gui tin nhan</button><br><br>
+	<ul id="list-tin-nhan"></ul>
+</body>
+</html>
