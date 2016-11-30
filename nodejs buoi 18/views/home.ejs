@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trang Chu</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		var socket = io();
+		$(document).ready(function() {
+			// body...
+			// id thi tra ve object, class la 1 mang object
+			$('#btnDangky').click(function () {
+				// body...
+				socket.emit('NEW_USERNAME', $('#txtUsername').val());
+				$('#txtUsername').val("");
+			});
+			socket.on('XAC_NHAN_DANG_KY', function (data) {
+				// body...
+				if(data == 1) {
+					// an di form dang ky
+					$('#div-dang-ky').hide(); 
+				} else {
+					alert(' dang ky that bai')
+				}
+			});
+			socket.on('NGUOI_DUNG_MOI', function (data) {
+				// body...
+				$('#listUsername').append(`<li id="${data}">${data}</li>`)
+			});
+			socket.on('LIST_USERNAME', function (data) {
+				// body...
+				data.forEach(function(e){
+					$('#listUsername').append(`<li id="${e}">${e}</li>`)
+				})
+			})
+			socket.on('NGUOI_DUNG_DANG_XUAT', function (data) {
+				// body...
+				$(`#${data}`).remove()
+			})
+			$('#btn-tin-nhan').click(function () {
+				// body...
+				socket.emit('NEW_MESSAGE', $('#txt-tin-nhan').val());
+				$('#txt-tin-nhan').val("");
+			});
+			socket.on('SERVER_SEND_MESSAGE', function (data) {
+				// body...
+				alert(data)
+			})
+		});
+	</script>
+</head>
+<body>
+
+<div id="div-dang-ky">
+	<input type="text" id="txtUsername" placeholder="Username"><br><br>
+	<button id="btnDangky">Dang Ky</button>
+</div>
+<ul id="listUsername"></ul>
+<div id="div-chat">
+	<input type="text" id="txt-tin-nhan"/><br><br>
+	<button type="button" name="button" id="btn-tin-nhan">Send</button>
+</div>
+</body>
+</html>
+
+<!-- tao ra list xac nhan thanh cong => them vao list -->
