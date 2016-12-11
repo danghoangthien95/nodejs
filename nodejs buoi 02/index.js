@@ -54,6 +54,9 @@ console.log(tinhgiaithua1(15));
 
 
 
+Math.trunc(Math.random()*1000);
+
+
 
 
 

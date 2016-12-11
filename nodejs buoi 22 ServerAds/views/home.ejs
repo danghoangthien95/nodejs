@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trang Chu</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function () {
+			// body...
+			var socket = io();
+			socket.on('SERVER_SEND_ADS', function (data) {
+				// body...
+				console.log(data)
+				$('#hinh-quang-cao').attr('src', data.hinh)
+				$('#a-ad').attr('href', data.link)
+			})
+		})
+	</script>
+</head>
+<body>
+<a href="" id="a-ad" target="blank"><img src="" id="hinh-quang-cao"></a>
+<div id="left_calculator">
+                    	<div class="fck_detail width_common block_ads_connect">
+                        <table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 74.3736%;"><tbody><tr><td>
+				<img alt="Bộ trưởng Quốc phòng Hàn Quốc Han Min-koo trong cuộc họp chiều nay với các chỉ huy quân sự. Ảnh: Yonhap" data-natural-width="500" src="http://img.f29.vnecdn.net/2016/12/09/sk-6041-1481287893.jpg" data-width="500" data-pwidth="672.2812"></td>
+		</tr><tr><td>
+				<p class="Image">
+					Bộ trưởng Quốc phòng Hàn Quốc Han Min-koo trong cuộc họp chiều nay với các chỉ huy quân sự. Ảnh: <em>Yonhap</em></p>
+			</td>
+		</tr></tbody></table><p class="Normal">
+	<span>"Triều Tiên có thể gia tăng căng thẳng quân sự nhằm làm trầm trọng hơn khủng hoảng chính trị ở Hàn Quốc và thử nghiệm Tổng thống đắc cử Donald Trump, bởi Bình Nhưỡng không hiểu chính sách của ông với Triều Tiên", </span><em>Yonhap</em><span> dẫn lời Han Min-koo, Bộ trưởng Quốc phòng Hàn Quốc, hôm nay nói trong cuộc họp với các chỉ huy quân sự hàng đầu.&nbsp;</span></p><p class="Normal">
+	Ngay sau khi kết quả bỏ phiếu được thông báo, Thủ tướng Hwang Kyo-ahn gọi bộ trưởng Han, nói: "Quân đội cần tập trung ứng phó bất cứ sự khiêu khích nào của Triều Tiên trong thời điểm bất định về chính trị".&nbsp;</p><p class="Normal">
+	Thủ tướng Hwang sẽ làm việc thay tổng thống Park, người sẽ bị đình chỉ, chờ Toà án Hiến pháp xem xét.&nbsp;</p><p class="Normal">
+	Các lực lượng Hàn Quốc và Mỹ đã triển khai thêm máy bay trinh sát có người lái và không người lái, sẵn sàng phản ứng tức thì nếu có bất cứ dấu hiệu khiêu khích nào của Triều Tiên. "Hiện chưa có dấu hiệu khiêu khích nào cụ thể", một quan chức Hàn Quốc cho biết.&nbsp;</p><p class="Normal">
+	Quốc hội Hàn Quốc chiều nay thông qua nghị quyết luận tội Tổng thống Park với<span>&nbsp;234 trong tổng số 300 nghị sĩ ủng hộ.&nbsp;</span></p><p class="Normal" style="text-align:right;">
+	<strong><span>Trọng Giáp</span></strong></p>                                                </div>
+                        
+                        
+
+                            <div id="sp_lien_quan"></div>
+                                                
+                        
+                        <!-- Javascript Parser -->
+                        <script type="text/javascript">
+						if(typeof(Parser) != "undefined")
+						{
+							$('.vne_video').each(function(key, val){
+								var videoId = $(this).html().trim();
+								var vneVideo = '<div style="text-align:center;"><div class="vne_video">'+videoId+'</div></div>';
+								var parentDom = $(this).parent().get(0).tagName;
+								var tableDom = $(this).parents('table');
+								if(parentDom == 'TD' || parentDom == 'td')
+								{
+									tableDom.before(vneVideo).remove();
+								}
+							});
+							Parser.SITE_URL         = base_url;
+							Parser.URL              = js_url;
+							Parser.FLASH_URL        = flash_url;
+							Parser.SITE_ID          = site_id;
+							Parser.AUTO_PLAY        = 1;
+							Parser.parseAll();
+                        }
+						if (typeof(common.parserAdsFullScreen) != 'undefined') {
+							common.parserAdsFullScreen();
+						}
+						if (typeof(common.resizeImageDetail) != 'undefined') {
+                            common.resizeImageDetail();
+                            $(window).resize(function() {
+                                common.delayFireOnce(1000).done(function() {
+                                    common.resizeImageDetail();
+                                });
+                            });
+                        }
+                        news_detail.shopParser();
+                        </script>
+						                                                <!-- Box share bottom -->
+                            <div class="social_share width_common" id="social_like">
+        <div class="item_social" data-component="true" data-component-type="like" data-component-objectid="3511287" data-component-siteid="1000000" data-objecttype="1" style="display: block;"><a class="btn_quantam" id="vne-like-anchor-1000000-3511287" href="#" total-like="6"></a><div class="number_count"><span id="like-total-1000000-3511287">6</span></div></div>            <div class="luu_baiviet right myvne_save_for_later" data-token="35c373f5bc0b229e68cb2fe1bded5c2d" data-article-id="3511287"><a title="Lưu" href="javascript:;"><span class="icon_savebaiviet"></span><span>Lưu</span></a></div>
+            <div class="item_social social_fb hidden_320" style="overflow: visible;"><div class="fb-like fb_iframe_widget" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-href="http://vnexpress.net/tin-tuc/the-gioi/quan-doi-han-quoc-de-phong-trieu-tien-sau-vu-luan-toi-tong-thong-3511287.html" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fvnexpress.net%2Ftin-tuc%2Fthe-gioi%2Fquan-doi-han-quoc-de-phong-trieu-tien-sau-vu-luan-toi-tong-thong-3511287.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450"><span style="vertical-align: bottom; width: 79px; height: 20px;"><iframe name="f2b5334c3dcb7f8" width="450px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/plugins/like.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F_IDqWBiKXtV.js%3Fversion%3D42%23cb%3Df1ef171d4ba965c%26domain%3Dvnexpress.net%26origin%3Dhttp%253A%252F%252Fvnexpress.net%252Ff32c4aca501c0c%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fvnexpress.net%2Ftin-tuc%2Fthe-gioi%2Fquan-doi-han-quoc-de-phong-trieu-tien-sau-vu-luan-toi-tong-thong-3511287.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450" style="border: none; visibility: visible; width: 79px; height: 20px;" class=""></iframe></span></div></div><div class="item_social social_twitter hidden_320"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="http://platform.twitter.com/widgets/tweet_button.3748f7cda49448f6c6f7854238570ba0.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fvnexpress.net%2Ftin-tuc%2Fthe-gioi%2Fquan-doi-han-quoc-de-phong-trieu-tien-sau-vu-luan-toi-tong-thong-3511287.html&amp;size=m&amp;text=Qu%C3%A2n%20%C4%91%E1%BB%99i%20H%C3%A0n%20Qu%E1%BB%91c%20%C4%91%E1%BB%81%20ph%C3%B2ng%20Tri%E1%BB%81u%20Ti%C3%AAn%20sau%20v%E1%BB%A5%20lu%E1%BA%ADn%20t%E1%BB%99i%20t%E1%BB%95ng%20th%E1%BB%91ng%20-%20VnExpress&amp;time=1481291728269&amp;type=share&amp;url=http%3A%2F%2Fbit.ly%2F2gi0ZYs" style="position: static; visibility: visible; width: 60px; height: 20px;" data-url="http://bit.ly/2gi0ZYs"></iframe></div><div class="item_social social_plus hidden_320"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1481291727833" name="I0_1481291727833" src="https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;hl=vi&amp;origin=http%3A%2F%2Fvnexpress.net&amp;url=http%3A%2F%2Fvnexpress.net%2Ftin-tuc%2Fthe-gioi%2Fquan-doi-han-quoc-de-phong-trieu-tien-sau-vu-luan-toi-tong-thong-3511287.html&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.YuQQ5iXuchI.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOt07aSCsE_zESfl-ejTI4u3GJFmw#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1481291727833&amp;parent=http%3A%2F%2Fvnexpress.net&amp;pfname=&amp;rpctoken=16517487" data-gapiattached="true" title="+1"></iframe></div></div></div>
+                        <!-- Box tin khác & link chéo -->
+                    	        <div id="box_tinlienquan" class="ab_recommend_2 width_common mg_bottom_20 box_recommend_style1">
+			<div class="title_box_category style_02">
+				<div class="txt_main_category"><a href="javascript:;">Tin liên quan</a></div>
+			</div>
+			<div class="content_box_category width_common">
+			  <div class="box_list_recommend width_common">
+				<ul class="list_news_recommend">
+				  						<li>
+							<div class="thumb width_common"> <a href="http://vnexpress.net/tin-tuc/the-gioi/tong-thong-han-quoc-san-sang-tu-chuc-som-3505963.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"><img src="http://img.f32.vnecdn.net/2016/11/29/2016-11-28T132110Z-1-MTZGRQECB-8756-6000-1480399917_122x122.jpg" alt="Tổng thống Hàn Quốc sẵn sàng từ chức sớm"></a> </div>
+							<div class="title_news"><a class="txt_link" href="http://vnexpress.net/tin-tuc/the-gioi/tong-thong-han-quoc-san-sang-tu-chuc-som-3505963.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking">Tổng thống Hàn Quốc sẵn sàng từ chức sớm</a> <span class="icon_commend" data-href="http://vnexpress.net/tin-tuc/the-gioi/tong-thong-han-quoc-san-sang-tu-chuc-som-3505963.html#box_comment" style="white-space: nowrap; cursor: pointer; display: none;"><span class="txt_num_comment widget-comment-3505963-1"><img class="icon_content icon_title_coment" alt="" src="http://st.f1.vnecdn.net/responsive/i/v15/graphics/img_blank.gif">&nbsp;<label class="total"></label></span></span><span class="txt_666">(29/11/2016)</span>
+							</div>
+						</li>
+											<li>
+							<div class="thumb width_common"> <a href="http://vnexpress.net/tin-tuc/the-gioi/trieu-tien-rai-truyen-don-goi-tong-thong-han-quoc-la-phu-thuy-3504005.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"><img src="http://img.f30.vnecdn.net/2016/11/24/222oparkgeunhye2-1479991141_122x122.jpg" alt="Triều Tiên rải truyền đơn gọi tổng thống Hàn Quốc là 'phù thủy'"></a> </div>
+							<div class="title_news"><a class="txt_link" href="http://vnexpress.net/tin-tuc/the-gioi/trieu-tien-rai-truyen-don-goi-tong-thong-han-quoc-la-phu-thuy-3504005.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking">Triều Tiên rải truyền đơn gọi tổng thống Hàn Quốc là 'phù thủy'</a> <span class="icon_commend" data-href="http://vnexpress.net/tin-tuc/the-gioi/trieu-tien-rai-truyen-don-goi-tong-thong-han-quoc-la-phu-thuy-3504005.html#box_comment" style="white-space: nowrap; cursor: pointer; display: none;"><span class="txt_num_comment widget-comment-3504005-1"><img class="icon_content icon_title_coment" alt="" src="http://st.f1.vnecdn.net/responsive/i/v15/graphics/img_blank.gif">&nbsp;<label class="total"></label></span></span><span class="txt_666">(24/11/2016)</span>
+							</div>
+						</li>
+											<li>
+							<div class="thumb width_common"> <a href="http://vnexpress.net/tin-tuc/the-gioi/tong-thong-han-quoc-thue-luat-su-sap-bi-tham-van-3499059.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"><img src="http://img.f29.vnecdn.net/2016/11/15/2016-11-04T030243Z-405325421-S-5517-9451-1479176710_122x122.jpg" alt="Tổng thống Hàn Quốc thuê luật sư, sắp bị thẩm vấn"></a> </div>
+							<div class="title_news"><a class="txt_link" href="http://vnexpress.net/tin-tuc/the-gioi/tong-thong-han-quoc-thue-luat-su-sap-bi-tham-van-3499059.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking">Tổng thống Hàn Quốc thuê luật sư, sắp bị thẩm vấn</a> <span class="icon_commend" data-href="http://vnexpress.net/tin-tuc/the-gioi/tong-thong-han-quoc-thue-luat-su-sap-bi-tham-van-3499059.html#box_comment" style="white-space: nowrap; cursor: pointer; display: none;"><span class="txt_num_comment widget-comment-3499059-1"><img class="icon_content icon_title_coment" alt="" src="http://st.f1.vnecdn.net/responsive/i/v15/graphics/img_blank.gif">&nbsp;<label class="total"></label></span></span><span class="txt_666">(15/11/2016)</span>
+							</div>
+						</li>
+											<li>
+							<div class="thumb width_common"> <a href="http://vnexpress.net/tin-tuc/the-gioi/phe-doi-lap-trinh-kien-nghi-luan-toi-tong-thong-han-quoc-len-quoc-hoi-3508311.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"><img src="http://img.f30.vnecdn.net/2016/12/04/1164057761591beb7bc5ao-1480788-1279-2976-1480788690_122x122.jpg" alt="Phe đối lập trình kiến nghị luận tội Tổng thống Hàn Quốc lên quốc hội"></a> </div>
+							<div class="title_news"><a class="txt_link" href="http://vnexpress.net/tin-tuc/the-gioi/phe-doi-lap-trinh-kien-nghi-luan-toi-tong-thong-han-quoc-len-quoc-hoi-3508311.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking">Phe đối lập trình kiến nghị luận tội Tổng thống Hàn Quốc lên quốc hội</a> <span class="icon_commend" data-href="http://vnexpress.net/tin-tuc/the-gioi/phe-doi-lap-trinh-kien-nghi-luan-toi-tong-thong-han-quoc-len-quoc-hoi-3508311.html#box_comment" style="white-space: nowrap; cursor: pointer; display: none;"><span class="txt_num_comment widget-comment-3508311-1"><img class="icon_content icon_title_coment" alt="" src="http://st.f1.vnecdn.net/responsive/i/v15/graphics/img_blank.gif">&nbsp;<label class="total">1</label></span></span><span class="txt_666">(4/12/2016)</span>
+							</div>
+						</li>
+									</ul>
+			  </div>
+			</div>
+		</div>
+	                                                <div class="clear"></div>
+                    </div>
+</body>
+</html>

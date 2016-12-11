@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function () {
+			// body...
+			var socket = io();
+			$('#sl-quang-cao').change(function () {
+				// body...
+				var hinh = $(this).val();
+				$('#img-quang-cao').attr('src', hinh)
+			});
+			$('#btn-gui').click(function () {
+				// body...
+				socket.emit('ADMIN_GUI_QUANG_CAO', $('#sl-quang-cao').val());
+			})
+		})
+	</script>
+	<style>
+		hr {
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<select id="sl-quang-cao">
+		<option>---Chon quang cao---</option>
+		<%
+		arr.forEach(function (arr) {
+		%>
+		<option value="<%=arr.hinh%>"><%=arr.ten%></option>
+		<%
+		})
+		%>
+	</select>
+	<button id="btn-gui">Gui</button>
+	<hr>
+	<img id="img-quang-cao">
+</body>
+</html>

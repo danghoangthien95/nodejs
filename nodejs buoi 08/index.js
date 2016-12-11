@@ -7,6 +7,7 @@ app.listen(3000, function () {
 	console.log('SERVER START')
 });
 
+
 var parser = bodyParser.urlencoded({extended: false})
 
 app.set('view engine', 'ejs');

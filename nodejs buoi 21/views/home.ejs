@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>trang chu</title>
+</head>
+<body>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		var socket = io();
+		$(document).ready(function () {
+			// body...
+			$('#btn-tao-room').click(function () {
+				// body...
+				// lay du lieu tu input va gui len server
+				socket.emit('CLIENT_CREATE_NEW_ROOM', $('#txt-room').val());
+			});
+			socket.on('SERVER_CONFIRM_ROOM_NAME', function (data) {
+				// body...
+				if(!data) {
+					alert('Ten room da ton tai')
+				}else{
+	            	$('#list-room').append(`<li class="item-room active">${data}</li>`);
+	         	}
+	
+			})
+			socket.on('SERVER_SEND_ROOM_ARRAY', function (arrRoom) {
+				// body...
+				arrRoom.forEach(function (e) {
+					// body...
+					// trueyn vao the li
+					$('#list-room').append(`<li class="item-room">${e}</li>`);
+				});
+			});
+			// 1. realtime de xem room
+			socket.on('NEW_ROOM_ACCEPTED', function (roomName) {
+				// body...
+				$('#list-room').append(`<li class="item-room">${roomName}</li>`);
+			})
+			// 2. cho bien de gui ve room khi an, lay text de gan cho bien
+			var activeRoom;
+			$(document).on('click', '.item-room', function () {
+				// body...
+				$('#list-room li').removeClass('active');
+				$(this).addClass('active');
+				activeRoom = $(this).html();
+				// gui su kien len server khi ngdung muon join vao room do
+				socket.emit('CLIENT_JOIN_ROOM', activeRoom);
+			})
+			$('#btn-send').click(function () {
+				// body...
+				// lay du lieu tu input va gui len server
+				socket.emit('CLIENT_SEND_MESSAGE_TO_ROOM', {roomName: activeRoom, msg: $('#txt-msg').val()});
+			});
+			socket.on('ROOM_MESSAGE', function (data) {
+				// body...
+				alert(data);
+			})
+			// key down (typing), an lan dau tien thi hien thi ra. tao bien toan cuc de kiem tra lan dau tien
+			var isFirst = true;
+			$('#txt-msg').keypress(function(e) {
+				// body...
+				if(isFirst) {
+					// gui tin -> dang nhap van ban
+					socket.emit('SOMEONE_EDIT_MSG', '');
+					console.log('gui tin');
+					isFirst = false;
+				}
+				if(e.which == 13) {
+					isFirst = true;
+					$(this).val('');
+					// gui tin -> ket thuc soan thao.
+					socket.emit('SOMEONE_STOP_EDIT', '')
+				} else {
+					isFirst = false;
+				}
+			})
+			$('#txt-msg').blur(function() {
+				// body...
+				// gui tin -> ket thuc soan thao
+				socket.emit('SOMEONE_STOP_EDIT', '')
+				isFirst = true;
+			})
+			socket.on('USER_EDIT', function () {
+				// body...
+				$('#enter-state').html('Ai do dang nhap van ban');
+			})
+			socket.on('STOP_EDIT', function () {
+				// body...
+				$('#enter-state').html('');
+			})
+		})
+	</script>
+	<style type="text/css">
+		.active {
+			background-color: yellow;
+			color: red;
+		}
+	</style>
+
+	<div class="div-tao-room">
+		<input type="text" id="txt-room" placeholder="Nhap ten room"><br><br>
+		<!-- gan su kien cho btn tao room -->
+		<button id="btn-tao-room">Tao room</button>
+	</div>
+	<div id="div-chat">
+		<br><br><input type="text" id="txt-msg" placeholder="Nhap tin nhan"><br><br>
+		<button id="btn-send">Send</button>
+	</div>
+	<ul id="list-room">
+		
+	</ul>
+	<p id="enter-state"></p>
+</body>
+</html>
