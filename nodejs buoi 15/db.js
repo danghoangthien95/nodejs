@@ -33,7 +33,7 @@ function insertUser(username, password, address, images, funcSuccess, funcFailed
 		// body...
 		if(err) {
 			console.log(err)
-			funcFailed()
+			funcFailed() 
 		} else {
 			console.log(result)
 			funcSuccess()

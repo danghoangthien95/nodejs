@@ -1,11 +1,60 @@
+<%
+	if (id <= 566) {
+		previous = 566;
+	} else {
+		previous = id - 1;
+	}
+	var next = parseInt(id) + 1;
+%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>trang chu</title>
 </head>
 <body>
-<% html.each(function (i, e) { %>
-	<h1><%= $(this).text()%></h1>
+<h1 style="text-align: center;">Thông tin Website</h1><br>
+<a href="./<%= previous %>?t=previous">Truoc</a>
+<a href="./<%= next %>?t=next">Sau</a>
+<% name.each(function (i, e) { %>
+	<h3>Tên website: <%= $('span#ctl00_ContentPlaceHolder1_lblName').text() %></h3>
 <% })%>
+<hr>
+<% domain.each(function (i, e) { %>
+	<h3>Địa chỉ tên miền: <%= $('span#ctl00_ContentPlaceHolder1_lblDomain').text() %></h3>
+<% })%>
+<hr>
+<% representer.each(function (i, e) { %>
+	<h3>Người chịu trách nhiệm: <%= $('span#ctl00_ContentPlaceHolder1_lblRepresenter').text() %></h3>
+<% })%>
+<hr>
+<% companyName.each(function (i, e) { %>
+	<h3>Tên Doanh nghiệp: <%= $('span#ctl00_ContentPlaceHolder1_lblCompanyName').text() %></h3>
+<% })%>
+<hr>
+<% taxCode.each(function (i, e) { %>
+	<h3>MST/ĐKKD/QĐTL: <%= $('span#ctl00_ContentPlaceHolder1_lblCompanyTaxCode').text() %></h3>
+<% })%>
+<hr>
+<% address.each(function (i, e) { %>
+	<h3>Trụ sở Doanh nghiệp: <%= $('span#ctl00_ContentPlaceHolder1_lblCompanyAddress').text() %></h3>
+<% })%>
+<hr>
+<% department.each(function (i, e) { %>
+	<h3>Tỉnh/Thành phố: <%= $('span#ctl00_ContentPlaceHolder1_lblDepartmentName').text() %></h3>
+<% })%>
+<hr>
+<% national.each(function (i, e) { %>
+	<h3>Quốc gia: <%= $('span#ctl00_ContentPlaceHolder1_lblNationalName').text() %></h3>
+<% })%>
+<hr>
+<% phone.each(function (i, e) { %>
+	<h3>Điện thoại: <%= $('span#ctl00_ContentPlaceHolder1_lblCompanyPhone').text() %></h3>
+<% })%>
+<hr>
+<br><br><br>
 </body>
 </html>
+
+
+
+<!-- <h1><%#= $(this).text()%></h1> -->

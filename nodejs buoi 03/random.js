@@ -15,7 +15,14 @@ function check(soA, soB, isAdd, f1, f2) {
 		f2(soA, soB)
 	}
 }
+function f1(soA, soB) {
+	// body...
+	console.log(soB + soA) ;
+}
+function f2(soA, soB) {
+	// body...
+	console.log(soB - soA) ;
+}
 
-check(1, 2, true, func1, func2);
+check(1, 2, false, f1, f2);
 
-viet func1, func2
